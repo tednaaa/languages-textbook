@@ -1,0 +1,13 @@
+.mat-list {
+  margin-bottom: 20px;
+}
+
+.mat-list-item {
+  transition: ease-in-out;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #0088ff;
+    color: #fff;
+  }
+}
