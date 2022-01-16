@@ -1,0 +1,28 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+input CreateLanguageInput {
+  language: String!
+}
+
+type Language {
+  id: Float!
+  language: String!
+}
+
+type Mutation {
+  createLanguage(createLanguageInput: CreateLanguageInput!): Language!
+  removeLanguage(id: Int!): Language!
+  updateLanguage(updateLanguageInput: UpdateLanguageInput!): Language!
+}
+
+type Query {
+  language(id: Int!): Language!
+  languages: [Language!]!
+}
+
+input UpdateLanguageInput {
+  id: Float!
+  language: String
+}
