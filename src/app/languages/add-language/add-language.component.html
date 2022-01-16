@@ -1,0 +1,9 @@
+<button
+  (click)="openPopup()"
+  class="add-language-button"
+  mat-raised-button
+  color="primary"
+>
+  Add language
+</button>
+<app-popup *ngIf="isPopupOpen">opened!</app-popup>
