@@ -16,11 +16,7 @@ import { Token } from './tokens/entities/token.entity';
     GraphQLModule.forRoot({
       autoSchemaFile: 'schema.gql',
       sortSchema: true,
-      context: ({ req, res }) => ({ req, res }),
-      cors: {
-        credentials: true,
-        origin: '*',
-      },
+      cors: { credentials: true },
     }),
     SequelizeModule.forRoot({
       dialect: 'postgres',
