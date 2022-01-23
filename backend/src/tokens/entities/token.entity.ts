@@ -3,14 +3,14 @@ import { BelongsTo, Column, DataType, ForeignKey, Model, Table } from 'sequelize
 
 import { User } from '../../users/entities/user.entity';
 
-interface LanguageCreationAttributes {
+interface TokenCreationAttributes {
   userId: number;
-  language: string;
+  refreshToken: string;
 }
 
-@Table({ tableName: 'languages' })
+@Table({ tableName: 'tokens' })
 @ObjectType()
-export class Language extends Model<Language, LanguageCreationAttributes> {
+export class Token extends Model<Token, TokenCreationAttributes> {
   @Field(() => Int)
   @Column({ type: DataType.INTEGER, unique: true, autoIncrement: true, primaryKey: true })
   id: number;
@@ -20,11 +20,7 @@ export class Language extends Model<Language, LanguageCreationAttributes> {
   @Column({ type: DataType.INTEGER })
   userId: number;
 
-  @BelongsTo(() => User)
-  @Field(() => User)
-  user: User;
-
   @Field(() => String)
   @Column({ type: DataType.STRING, unique: true })
-  language: string;
+  refreshToken: string;
 }
